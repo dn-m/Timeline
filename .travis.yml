@@ -14,3 +14,5 @@ before_script: carthage update
 
 script: xcodebuild test -project Timeline.xcodeproj -scheme Timeline -destination "${DESTINATION}" TOOLCHAINS=swift
 
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
